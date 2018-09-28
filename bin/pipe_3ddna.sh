@@ -18,7 +18,7 @@ echo "ln -s ${fastq_dir} ./fastq" >>pre_juicer.sh
 echo "ln -s ${juicer_dir}CPU/scripts scripts" >>pre_juicer.sh
 echo "mkdir restriction_sites;cd restriction_sites" >>pre_juicer.sh
 echo "python ${juicer_dir}misc/generate_site_positions.py ${enzyme} ${name} ${ref}" >>pre_juicer.sh
-echo "awk 'BEGIN{OFS="\t"}{print \$1, \$NF}' ${name}_${enzyme}.txt > ${name}.chrom.sizes" >>pre_juicer.sh
+echo "awk 'BEGIN{OFS=\"\\t\"}{print \$1, \$NF}' ${name}_${enzyme}.txt > ${name}.chrom.sizes" >>pre_juicer.sh
 echo "cd ${outdir}/juicer;mkdir reference;cd reference;ln -s ${ref} ${name}.fasta" >>pre_juicer.sh
 echo "bwa index ${new_ref}" >>pre_juicer.sh
 
